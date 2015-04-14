@@ -19,7 +19,7 @@
             find = '\n';
             var re = new RegExp(find, 'g');
             str = str.replace(re,"\"\n+\"");
-            $('#output').val('"'+str+'"');
+            $('#output').val('""\n+'+'"'+str+'";');
         }
     </script>
 </head>
