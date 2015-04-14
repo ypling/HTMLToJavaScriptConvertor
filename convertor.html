@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- jQuery cdn  1.11.2 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var testStr="";
+            $('#output').val();
+        });
+        function convert(){
+            var str = $('#input').val();
+            var find = '"';
+            var re = new RegExp(find, 'g');
+            str = str.replace(re,"\\\"");
+            find = '\n';
+            var re = new RegExp(find, 'g');
+            str = str.replace(re,"\"\n+\"");
+            $('#output').val('"'+str+'"');
+        }
+    </script>
+</head>
+<body>
+<textarea id="input" style="width:100%;height: 20em;"></textarea><br>
+<textarea id="output" style="width:100%;height: 20em;"></textarea><br>
+<button onclick="convert()">convert</button>
+</body>
+</html>
